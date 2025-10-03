@@ -14,7 +14,7 @@ Copy this command and paste in Ubuntu terminal (handles existing directories):
 curl -sSL https://raw.githubusercontent.com/bhataakib02/HoneyPort/main/UBUNTU_DEPLOY.sh | bash
 ```
 
-> **✅ Fixed Issues**: Now automatically removes existing HoneyPort directory and verifies docker-compose.yml exists before deployment.
+> **✅ Fixed Issues**: Automatically removes existing HoneyPort directory, verifies docker-compose.yml exists, and fixes Docker configuration (backend port 8001, proper module references, environment variables).
 
 ---
 
