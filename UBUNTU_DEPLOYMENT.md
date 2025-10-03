@@ -6,13 +6,15 @@
 
 ---
 
-## 🚀 **SINGLE COMMAND DEPLOYMENT**
+## 🚀 **FIXED SINGLE COMMAND DEPLOYMENT**
 
-Copy this command and paste in Ubuntu terminal:
+Copy this command and paste in Ubuntu terminal (handles existing directories):
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/bhataakib02/HoneyPort/main/UBUNTU_DEPLOY.sh | bash
 ```
+
+> **✅ Fixed Issues**: Now automatically removes existing HoneyPort directory and verifies docker-compose.yml exists before deployment.
 
 ---
 
