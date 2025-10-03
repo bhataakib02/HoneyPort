@@ -5,11 +5,14 @@ services:
     build: ./backend
     container_name: backend
     ports:
-      - "8000:8000"
+      - "8001:8001"
     volumes:
       - ./honeypot/data:/app/data
       - ./honeypot/models:/app/models
-    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    command: uvicorn aetherion_app:app --host 0.0.0.0 --port 8001 --reload
     restart: unless-stopped
 
   honeypot:
@@ -20,16 +23,10 @@ services:
     volumes:
       - ./honeypot/data:/app/data
       - ./honeypot/models:/app/models
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
     command: python server.py
-    restart: unless-stopped
-
-  retrainer:
-    build: ./honeypot
-    container_name: retrainer
-    volumes:
-      - ./honeypot/data:/app/data
-      - ./honeypot/models:/app/models
-    command: python retrain.py
     restart: unless-stopped
 
   dashboard:
@@ -37,5 +34,8 @@ services:
     container_name: dashboard
     ports:
       - "5173:5173"
-    command: npm run dev -- --host
+    environment:
+      - VITE_API_URL=http://localhost:8001
+      - VITE_HONEYPOT_URL=http://localhost:2222
+    command: npm run dev -- --host 0.0.0.0
     restart: unless-stopped
