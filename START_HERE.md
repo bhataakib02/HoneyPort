@@ -15,8 +15,8 @@
 
 ```bash
 # Create .env file with your Telegram credentials
-echo "TELEGRAM_BOT_TOKEN=8290924411:AAGsOGoYulFfavqv-xmyDBKC7FdcR24D0Ds" > .env
-echo "TELEGRAM_CHAT_ID=6433268037" >> .env
+echo "TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here" > .env
+echo "TELEGRAM_CHAT_ID=your_telegram_chat_id_here" >> .env
 
 # Build and start everything
 docker-compose build

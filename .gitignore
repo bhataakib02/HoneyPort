@@ -128,3 +128,27 @@ temp/
 # Project specific
 dashboard/src/components/_*.jsx
 zz.txt
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+*.env
+config/secrets.json
+secrets/
+credentials/
+
+# Sensitive data patterns
+*telegram*token*
+*api*key*
+*secret*
+*password*
+*bot*token*
+*chat*id*
+
+# Log files that might contain sensitive data
+telegram.log
+api.log
+auth.log

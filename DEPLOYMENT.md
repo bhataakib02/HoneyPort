@@ -15,8 +15,8 @@
 ## 🛠️ Your Telegram Configuration
 
 ```
-TELEGRAM_BOT_TOKEN=8290924411:AAGsOGoYulFfavqv-xmyDBKC7FdcR24D0Ds
-TELEGRAM_CHAT_ID=6433268037
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+TELEGRAM_CHAT_ID=your_telegram_chat_id_here
 ```
 
 ## 🚀 Quick Start

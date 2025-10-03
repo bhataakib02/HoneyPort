@@ -174,8 +174,18 @@ rm: cannot remove '/*': Permission denied"""
         try:
             import requests
             
-            bot_token = "8290924411:AAGsOGoYulFfavqv-xmyDBKC7FdcR24D0Ds"
-            chat_id = "6433268037"
+            # Load Telegram credentials from environment variables
+            import os
+            from dotenv import load_dotenv
+            
+            load_dotenv()
+            bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+            chat_id = os.getenv("TELEGRAM_CHAT_ID")
+            
+            # Check if Telegram credentials are configured
+            if not bot_token or not chat_id:
+                logger.warning("Telegram credentials not configured. Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables.")
+                return
             
             emoji = "🚨" if threat_level == "CRITICAL" else "⚠️"
             message = f"""{emoji} AIML Honeypot Alert!

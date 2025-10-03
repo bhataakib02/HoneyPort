@@ -68,15 +68,25 @@ graph TB
    cd aetherionbot
    ```
 
-2. **Setup Backend** (Terminal 1)
+2. **Setup Environment Variables**
+   ```bash
+   # Copy environment template
+   cp env.example .env
+   
+   # Edit .env with your Telegram credentials
+   # Get bot token from https://t.me/BotFather
+   # Get chat ID by messaging your bot and checking logs
+   ```
+
+3. **Setup Backend** (Terminal 1)
    ```bash
    cd backend
-   pip install fastapi uvicorn websockets python-multipart
+   pip install fastapi uvicorn websockets python-multipart python-dotenv
    python aetherion_app.py
    ```
    **Backend runs on:** `http://localhost:8001`
 
-3. **Setup Dashboard** (Terminal 2)
+4. **Setup Dashboard** (Terminal 2)
    ```bash
    cd dashboard
    npm install
@@ -84,7 +94,7 @@ graph TB
    ```
    **Dashboard runs on:** `http://localhost:5173`
 
-4. **Access the System**
+5. **Access the System**
    - **🎨 Dashboard:** http://localhost:5173
    - **📚 API Docs:** http://localhost:8001/docs
    - **🔌 WebSocket:** ws://localhost:8001/ws/threats
@@ -110,6 +120,32 @@ graph TB
 - **📱 Mobile Responsive** - Works on all devices
 - **⚡ Real-time Updates** - Live threat feed
 - **🎯 Interactive Elements** - Click to inspect functionality
+
+---
+
+## 🔐 Security Configuration
+
+### 🛡️ Environment Variables Setup
+
+For production deployment, create a `.env` file with your actual credentials:
+
+```bash
+# Copy the template
+cp env.example .env
+
+# Edit with your real credentials
+nano .env
+```
+
+**Required Variables:**
+- `TELEGRAM_BOT_TOKEN` - Get from [@BotFather](https://t.me/BotFather)
+- `TELEGRAM_CHAT_ID` - Get by messaging your bot and checking logs
+
+**🔒 Security Best Practices:**
+- ✅ Never commit `.env` files to git
+- ✅ Use environment variables for all secrets
+- ✅ Regular rotation of API tokens
+- ✅ Monitor access logs regularly
 
 ---
 

@@ -27,8 +27,9 @@ if [ ! -f .env ]; then
     echo "📝 Creating .env file from template..."
     cp env.example .env
     echo "⚠️  Please edit .env file with your Telegram bot token and chat ID"
-    echo "   Use the token: 8290924411:AAGsOGoYulFfavqv-xmyDBKC7FdcR24D0Ds"
-    echo "   Use the chat ID: 6433268037"
+    echo "   1. Get bot token from https://t.me/BotFather"
+    echo "   2. Get chat ID by messaging your bot and checking logs"
+    echo "   3. Update the .env file with your credentials"
     echo ""
 fi
 
