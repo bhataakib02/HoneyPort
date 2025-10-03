@@ -60,41 +60,26 @@ graph TB
 - **Node.js 16+**
 - **Git**
 
-### 🚀 Quick Start
+## 🚀 **DEPLOYMENT COMMANDS**
 
-### **🐳 Docker Deployment (Recommended)**
+### **🐧 Ubuntu VM (Single Command):**
 
-**🚀 One-Click Deployment:**
+```bash
+curl -sSL https://raw.githubusercontent.com/bhataakib02/HoneyPort/main/UBUNTU_DEPLOY.sh | bash
+```
+
+### **🔧 Manual Ubuntu Deployment:**
+
 ```bash
 # Clone repository
 git clone https://github.com/bhataakib02/HoneyPort.git
 cd HoneyPort
 
-# Copy environment template
+# Configure Telegram (yours is pre-configured)
 cp env.example .env
 
-# Start all services
+# Deploy
 docker-compose up -d
-```
-
-**🖥️ Ubuntu VM Deployment:**
-```bash
-# Super quick VM deployment
-curl -sSL https://raw.githubusercontent.com/bhataakib02/HoneyPort/main/ubuntu-deploy.sh | bash
-
-# OR manual deployment
-git clone https://github.com/bhataakib02/HoneyPort.git
-cd HoneyPort && ./ubuntu-deploy.sh
-```
-
-**🔧 Production Deployment:**
-```bash
-# Linux/Mac
-chmod +x deploy-production.sh
-./deploy-production.sh
-
-# Windows
-deploy-production.bat
 ```
 
 ### **📝 Environment Setup**
@@ -114,11 +99,9 @@ TELEGRAM_CHAT_ID=your_chat_id_here
 
 ---
 
-## 📚 **Deployment Documentation**
+## 📚 **Documentation**
 
-- **[🐧 UBUNTU_DEPLOYMENT.md](UBUNTU_DEPLOYMENT.md)** - Complete Ubuntu VM deployment guide
-- **[🖥️ VM_SETUP_GUIDE.md](VM_SETUP_GUIDE.md)** - Quick VM setup instructions
-- **[🚀 DEPLOYMENT.md](DEPLOYMENT.md)** - Advanced deployment options
+- **[🐧 UBUNTU_DEPLOYMENT.md](UBUNTU_DEPLOYMENT.md)** - Copy-paste Ubuntu deployment commands
 
 ---
 
