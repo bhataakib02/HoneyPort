@@ -18,15 +18,30 @@ sudo apt update && sudo apt install curl git docker.io docker-compose -y
 # Configure Docker
 sudo usermod -aG docker $USER
 
-# Clone repository
+# Clone repository (remove existing if present)
+if [ -d "HoneyPort" ]; then
+    echo "📁 Removing existing HoneyPort directory..."
+    rm -rf HoneyPort
+fi
 git clone https://github.com/bhataakib02/HoneyPort.git && cd HoneyPort
 
 # Configure environment
 echo "TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN" > .env
 echo "TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID" >> .env
 
+# Verify docker-compose.yml exists
+if [ ! -f "docker-compose.yml" ]; then
+    echo "❌ Error: docker-compose.yml not found in HoneyPort directory"
+    echo "📁 Current directory contents:"
+    ls -la
+    exit 1
+fi
+
 # Deploy
-docker-compose build --no-cache && docker-compose up -d
+echo "🔨 Building Docker containers..."
+docker-compose build --no-cache
+echo "🚀 Starting services..."
+docker-compose up -d
 
 # Wait for services
 sleep 20
