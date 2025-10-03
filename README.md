@@ -62,42 +62,63 @@ graph TB
 
 ### 🚀 Quick Start
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/aetherionbot.git
-   cd aetherionbot
-   ```
+### **🐳 Docker Deployment (Recommended)**
 
-2. **Setup Environment Variables**
-   ```bash
-   # Copy environment template
-   cp env.example .env
-   
-   # Edit .env with your Telegram credentials
-   # Get bot token from https://t.me/BotFather
-   # Get chat ID by messaging your bot and checking logs
-   ```
+**🚀 One-Click Deployment:**
+```bash
+# Clone repository
+git clone https://github.com/bhataakib02/HoneyPort.git
+cd HoneyPort
 
-3. **Setup Backend** (Terminal 1)
-   ```bash
-   cd backend
-   pip install fastapi uvicorn websockets python-multipart python-dotenv
-   python aetherion_app.py
-   ```
-   **Backend runs on:** `http://localhost:8001`
+# Copy environment template
+cp env.example .env
 
-4. **Setup Dashboard** (Terminal 2)
-   ```bash
-   cd dashboard
-   npm install
-   npm run dev
-   ```
-   **Dashboard runs on:** `http://localhost:5173`
+# Start all services
+docker-compose up -d
+```
 
-5. **Access the System**
-   - **🎨 Dashboard:** http://localhost:5173
-   - **📚 API Docs:** http://localhost:8001/docs
-   - **🔌 WebSocket:** ws://localhost:8001/ws/threats
+**🖥️ Ubuntu VM Deployment:**
+```bash
+# Super quick VM deployment
+curl -sSL https://raw.githubusercontent.com/bhataakib02/HoneyPort/main/ubuntu-deploy.sh | bash
+
+# OR manual deployment
+git clone https://github.com/bhataakib02/HoneyPort.git
+cd HoneyPort && ./ubuntu-deploy.sh
+```
+
+**🔧 Production Deployment:**
+```bash
+# Linux/Mac
+chmod +x deploy-production.sh
+./deploy-production.sh
+
+# Windows
+deploy-production.bat
+```
+
+### **📝 Environment Setup**
+```bash
+# Configure credentials
+cp env.example .env
+
+# Edit .env with:
+TELEGRAM_BOT_TOKEN=your_bot_token_here
+TELEGRAM_CHAT_ID=your_chat_id_here
+```
+
+### **🎯 Access Your AetherionBot**
+- **🎨 Dashboard:** http://localhost:5173
+- **📚 API Docs:** http://localhost:8001/docs  
+- **🛡️ Honeypot:** ssh user@localhost -p 2222
+
+---
+
+## 📚 **Deployment Documentation**
+
+- **[🐧 UBUNTU_DEPLOYMENT.md](UBUNTU_DEPLOYMENT.md)** - Complete Ubuntu VM deployment guide
+- **[🖥️ VM_SETUP_GUIDE.md](VM_SETUP_GUIDE.md)** - Quick VM setup instructions
+- **[🚀 DEPLOYMENT.md](DEPLOYMENT.md)** - Advanced deployment options
 
 ---
 
