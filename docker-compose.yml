@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./honeypot/data:/app/data
+      - ./honeypot/models:/app/models
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  honeypot:
+    build: ./honeypot
+    container_name: honeypot
+    ports:
+      - "2222:2222"
+    volumes:
+      - ./honeypot/data:/app/data
+      - ./honeypot/models:/app/models
+    command: python server.py
+    restart: unless-stopped
+
+  retrainer:
+    build: ./honeypot
+    container_name: retrainer
+    volumes:
+      - ./honeypot/data:/app/data
+      - ./honeypot/models:/app/models
+    command: python retrain.py
+    restart: unless-stopped
+
+  dashboard:
+    build: ./dashboard
+    container_name: dashboard
+    ports:
+      - "5173:5173"
+    command: npm run dev -- --host
+    restart: unless-stopped

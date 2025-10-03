@@ -1,0 +1,57 @@
+{
+  "10.0.0.100": {
+    "ip": "10.0.0.100",
+    "source_country": "Internal Network",
+    "source_city": "LAN Zone",
+    "known_malware": false,
+    "attack_frequency": 8,
+    "first_seen": "2025-10-03T10:10:51.893667",
+    "last_seen": "2025-10-03T11:09:04.946888",
+    "reputation_score": 0.7,
+    "threat_signature": "81FC98C849087C8E"
+  },
+  "203.0.113.15": {
+    "ip": "203.0.113.15",
+    "source_country": "Unknown",
+    "source_city": "Unknown",
+    "known_malware": false,
+    "attack_frequency": 8,
+    "first_seen": "2025-10-03T10:10:53.493166",
+    "last_seen": "2025-10-03T11:09:06.536047",
+    "reputation_score": 1.0,
+    "threat_signature": "B1DB35F0E334B72D"
+  },
+  "198.51.100.50": {
+    "ip": "198.51.100.50",
+    "source_country": "Unknown",
+    "source_city": "Unknown",
+    "known_malware": false,
+    "attack_frequency": 8,
+    "first_seen": "2025-10-03T10:10:55.087360",
+    "last_seen": "2025-10-03T11:09:08.148140",
+    "reputation_score": 0.7599999999999999,
+    "threat_signature": "9001FCB7621A9000"
+  },
+  "172.16.1.200": {
+    "ip": "172.16.1.200",
+    "source_country": "Internal Network",
+    "source_city": "LAN Zone",
+    "known_malware": false,
+    "attack_frequency": 8,
+    "first_seen": "2025-10-03T10:10:56.678542",
+    "last_seen": "2025-10-03T11:09:09.734619",
+    "reputation_score": 1.0,
+    "threat_signature": "BE7A49C2D134141E"
+  },
+  "203.0.113.25": {
+    "ip": "203.0.113.25",
+    "source_country": "Unknown",
+    "source_city": "Unknown",
+    "known_malware": false,
+    "attack_frequency": 8,
+    "first_seen": "2025-10-03T10:10:58.270901",
+    "last_seen": "2025-10-03T11:09:11.303123",
+    "reputation_score": 1.0,
+    "threat_signature": "68AEA3A1490B4227"
+  }
+}
